@@ -1,0 +1,84 @@
+body{
+    width: 100%;
+}
+textarea
+{
+    width: 100%;
+    height: 250px;
+    margin: auto;
+    resize: none;
+}
+.ta{
+    display: flex;
+}
+.flex{
+    display: flex;
+    text-align: center;
+}
+.textearea
+{
+    width: 90%;
+    margin: auto;
+}
+#text:focus{
+    outline: none;
+}
+#textcss:focus{
+    outline: none;
+}
+.disp
+{
+    display: inline-block;
+}
+img
+{
+    height: 35px;
+    width: 70px;
+}
+.contour
+{
+    border: 3px solid #1d1dbb;
+    border-radius: 5px;
+}
+#prog{
+    width: 50%;
+    background-color: #e7e7e7;
+    border: 1px solid blue;
+    border-radius: 3px;
+}
+#file
+{
+    width: 50%;
+    background-color: #e7e7e7;
+    border: 1px solid blue;
+    border-radius: 3px;
+}
+.vert::-webkit-progress-value
+{
+    background-color: green;
+}
+.moitier::-webkit-progress-value
+{
+    background-color: orange;
+}
+.red::-webkit-progress-value
+{
+    background-color: red;
+}
+progress::-webkit-progress-bar
+{
+    background: none;
+}
+#limite
+{
+    width: 50%;
+}
+#lim{
+    width: 50%;
+}
+#show
+{
+    margin: auto;
+    width: 95%;
+    word-break: break-word;
+}

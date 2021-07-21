@@ -1,10 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Code pen - Quentin</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="04_basesDOM.js"></script>
 </head>
 <body>
+    <h1>Editor HTML & CSS</h1>
+    <div class="textearea">
+        <button id="g"><b>Gras</b></button>
+        <button id="i"><i>Italic</i></button>
+        <br><br>
+        <div class="ta">
+            <textarea id="text" rows="1" cols="33" name="zone" placeholder="Enter text"></textarea>
+            <textarea id="textcss" cols="33" rows="1" name="zone" placeholder="Enter text"></textarea>
+        </div>
+        <div class="ta">
+            <progress id="file" class="vert"></progress>
+            <progress id="prog" class="vert"></progress>
+        </div>
+        <div class="flex">
+            <label id="limite"></label>
+            <label id="lim"></label>
+        </div>
+    </div>
 
+    <h1 class="disp">Live coding<img id="chargement" src="gif/giphy.gif" alt=""></h1>
+
+    <br>
+    <p id="show"></p>
 </body>
 </html>
