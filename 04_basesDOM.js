@@ -8,27 +8,37 @@ document.addEventListener("DOMContentLoaded", function() {
     let image = document.getElementById('chargement');
     let body = document.body;
     let max = document.getElementById('limite');
+    let limcss = document.getElementById('lim');
     let charge = document.getElementById('file');
+    let chargement = document.getElementById('prog');
     let pourcent = limit /2 ;
     let rouge = 0.8 * limit;
     let css = document.getElementById('textcss');
-    let prog = document.getElementById('prog');
     let i = '<i></i>';
     let g = '<b></b>';
+    //Limite afficher au chargement
     max.innerHTML= valeur + `/${limit}`;
+    limcss.innerHTML = valeur + `/${limit}`;
+    //Image en hidden au chargement
     image.style.visibility="hidden";
     text.addEventListener('keyup', function(){
         limite();
     })
     ib.addEventListener('click', function(){
-        //Au clique je veux qu'il intègre la variable i dans ma variable text
         text.value += i;
     })
     gb.addEventListener('click', function(){
-        //Au clique je veux qu'il intégre la variable g dans ma variable text
         text.value += g;
     })
     //contour + image de chargement
+        css.onfocus = function(){
+            image.style.visibility="visible";
+            css.classList.add('contour');
+        }
+        css.onblur = function(){
+            image.style.visibility="hidden";
+            css.classList.remove('contour');
+        }
         text.onfocus = function(){
             image.style.visibility="visible";
             text.classList.add('contour');
@@ -36,14 +46,6 @@ document.addEventListener("DOMContentLoaded", function() {
         text.onblur = function(){
             image.style.visibility="hidden";
             text.classList.remove('contour');
-        }
-        css.onfocus = function(){
-            image.style.visibility="visble";
-            css.classList.add('contour');
-        }
-        css.onblur = function(){
-            image.style.visibility="hidden";
-            css.classList.remove('contour');
         }
     //Fin pour contour
     function limite(){
@@ -67,7 +69,30 @@ document.addEventListener("DOMContentLoaded", function() {
             charge.classList.remove('moitier');
             charge.classList.add('red');
         }
-
+    }
+    css.addEventListener('keyup', function(){
+        limitecss();
+    })
+    function limitecss(){
+        css.value = css.value.substring(0,limit);
+        area.innerHTML = css.value;
+        valeur = area.textContent.length;
+        limcss.innerHTML = valeur + `/${limit}`;
+        chargement.setAttribute('value', `${valeur}`)
+        chargement.setAttribute('max', `${limit}`)
+        if (valeur < pourcent){
+            chargement.classList.remove('red');
+            chargement.classList.remove('moitier');
+            chargement.classList.add('vert');
+        }
+        else if (pourcent <= valeur && valeur < rouge){
+            chargement.classList.remove('red');
+            chargement.classList.add('moitier');
+        }
+        else {
+            chargement.classList.remove('moitier');
+            chargement.classList.add('red');
+        }
     }
 
 })

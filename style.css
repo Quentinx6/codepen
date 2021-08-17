@@ -53,17 +53,19 @@ img
     border: 1px solid blue;
     border-radius: 3px;
 }
-.vert::-webkit-progress-value
-{
+.vert::-webkit-progress-value {
     background-color: green;
+    transition: 0.3s;
 }
 .moitier::-webkit-progress-value
 {
     background-color: orange;
+    transition: 0.3s;
 }
 .red::-webkit-progress-value
 {
     background-color: red;
+    transition: 0.3s;
 }
 progress::-webkit-progress-bar
 {
